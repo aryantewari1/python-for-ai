@@ -2,9 +2,9 @@
 ##to exhibit the same behavior as a duck we need to implement the same methods as a duck has.
 
 
-from typing import Protocol
+from typing import Protocol, runtime_checkable
 
-
+@runtime_checkable
 class Duck(Protocol):
     def quack(self) -> str:
         ...
@@ -31,5 +31,5 @@ def make_it_quack(duck: Duck) -> None:
     print(duck.walk())
 
 
-print(make_it_quack(Human())) ##this will work because Human class implements the same methods as Duck class
-print(make_it_quack(Dog())) ##this will work because Dog class implements the same methods as Duck class
+make_it_quack(Human())
+make_it_quack(Dog())
