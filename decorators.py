@@ -66,3 +66,21 @@ delayed_func()
 
 from functools import wraps 
 
+
+def decorator_amazing(func):
+    @wraps(func)
+    def wrapper():
+        print("this is a wrapper")
+        func()
+        print("the wrapper ends")
+    return wrapper
+
+
+@decorator_amazing
+def orig_Func():
+    """this is the doc string of original func"""
+    print("wow") 
+
+
+print(orig_Func.__name__)
+print(orig_Func.__doc__)
