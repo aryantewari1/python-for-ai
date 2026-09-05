@@ -84,3 +84,19 @@ def orig_Func():
 
 print(orig_Func.__name__)
 print(orig_Func.__doc__)
+
+##Class wrappers: add behaviour or attribute to the class and thats it 
+
+def add_behaviour(cls):
+    def greet(self): 
+        print("hellow world")
+    cls.greet= greet
+    return cls
+
+@add_behaviour
+class Animal: 
+        def __init__(self, legs): 
+            self.legs = legs
+
+dog = Animal(4)
+dog.greet()
