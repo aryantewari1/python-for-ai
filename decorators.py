@@ -100,3 +100,9 @@ class Animal:
 
 dog = Animal(4)
 dog.greet()
+
+
+#Introspection- it helps you inspect objects and available attributes/methods at runtime
+##we use dir(obj.name)
+
+print(dir(dog)) ### returns a big list of all the methods and attributes
